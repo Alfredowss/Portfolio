@@ -4,6 +4,15 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+@import "tailwindcss";
+
+
+.rounded-full{
+	border-radius: 50%;
+}
+
+
+
 :root {
 	--accent: #2337ff;
 	--accent-dark: #000d8a;
@@ -35,19 +44,15 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
 	font-size: 20px;
 	line-height: 1.7;
-}
-main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
+	height: 100vh;
+	background-image: url("public/grid.jpg");
+	background-size: cover;
+	background-position: top center;
 }
 h1,
 h2,
@@ -60,7 +65,7 @@ h6 {
 	line-height: 1.2;
 }
 h1 {
-	font-size: 3.052em;
+	font-size: clamp(1.8em, 5vw, 3.2em);
 }
 h2 {
 	font-size: 2.441em;
@@ -130,9 +135,7 @@ hr {
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
-	}
-	main {
-		padding: 1em;
+		background-position: left bottom;
 	}
 }
 

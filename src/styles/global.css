@@ -156,3 +156,76 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+/* Lines animation */
+
+.lines {
+  position: absolute;
+  overflow: hidden;
+  width: 90vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.lines .line {
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+@media (min-width: 720px) {
+	.lines .line::after{
+		height: 72px !important;
+	}
+}
+
+.lines .line:nth-child(1) {
+  margin-left: -46%;
+}
+
+.lines .line:nth-child(1)::after {
+  animation-delay: 2s;
+}
+
+.lines .line:nth-child(3) {
+  margin-left: 46%;
+}
+
+.lines .line:nth-child(3)::after {
+  animation-delay: 2.6s;
+}
+
+.lines .line::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 217, 0, 0) 0%,
+    #efc58d 55%,
+    #efc58d 100%
+  );
+  animation: run 4s 0s infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.2, 0.70, 0, 1);
+}
+
+@keyframes run {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+
+
+

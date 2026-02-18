@@ -4,7 +4,10 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { Image } from 'astro:assets';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-import myPhoto from "../assets/alfred.jpg";
+import myPhoto from "../assets/alfred.jpeg";
+import BoogApp from "../assets/BoogApp.png";
+import ExactScience from "../assets/exact-science.png";
+import AnacondaSw from "../assets/anaconda.png";
 ---
 
 <!doctype html>
@@ -20,25 +23,37 @@ import myPhoto from "../assets/alfred.jpg";
   				<div class="line"></div>
   				<div class="line"></div>
   				<div class="line"></div>
+  				<div class="line"></div>
 			</div>
-				<section class="md:h-auto row-start-2 md:row-start-auto max-w-[800px] grid grid-rows-[1fr_1fr_1fr] md:grid-rows-[auto_auto_auto] content-center md:gap-y-5">
+				<section class="md:h-auto row-start-2 md:row-start-auto max-w-[800px] grid grid-rows-[1fr_1fr_1fr] md:grid-rows-[auto_auto_auto] content-center md:gap-y-5 relative z-2">
 					<h1 class="font-[500] flex items-center justify-around md:justify-start"><span>✌️  Hi, I am <span class="text-fuchsia-800">Alfredo</span>, <br/> Creative Technologist </span></h1>
 					<p class="flex items-center px-7 md:px-0 md:block m-0 text-base md:text-xl">Fullstack developer. I have experience working with multiple techologies and frameworks, a focused developer in continously growing and in permanent search of technical challenges </p>
 					<div class="flex items-center justify-center md:justify-start">
-						<button class="cursor-pointer bg-blue-800 m-0 my-[2vh] text-gray-50 px-12 py-2 rounded-md"> Download CV </button>
+						<button class="cursor-pointer bg-blue-900 m-0 my-[4vh] text-gray-50 px-12 py-2 rounded-md"> Download CV </button>
 					<div>	
 				</section>	
 
 				<section class="row-start-1 row-end-2 md:row-start-auto md:row-end-auto relative justify-self-center md:justify-self-start content-center">
-					<figure class="rounded-full text-light relative z-2 md:top-[-1em] w-[54vw] h-[54vw] md:w-[360px] md:h-[360px]" style="overflow:hidden; display: flex; justify-content:center; align-items: center;">
-						<Image class="w-[54vw] h-[54vw] xl:w-[400px]"
-						       width={400} 
-						       height={100} 
+					<figure class="rounded-full text-light relative z-2 md:top-[-1em] w-[54vw] h-[54vw] md:w-[360px] md:h-[360px] xl:w-[400px] xl:h-[400px]" style="overflow:hidden; display: flex; justify-content:center; align-items: center;">
+						<Image class="w-[54vw] h-[54vw] xl:w-[400px] xl:h-[400px]"
 						       src={ myPhoto } alt="user image" />
 					</figure>
 				</section>
 			</article>
 		</main>
-		<Footer />
+		<section class="bg-[#F3F4F7] h-[200px] md:h-[280px] flex items-center relative z-3">
+						<Image class="w-[90px] md:w-[120px] opacity-50"
+						       width={400} 
+						       height={100} 
+						       src={ AnacondaSw } alt="user image" />
+						<Image class="w-[90px] md:w-[120px] opacity-50"
+						       width={400} 
+						       height={100} 
+						       src={ BoogApp } alt="user image" />
+						<Image class="w-[166px] md:w-[228px] opacity-50"
+						       width={400} 
+						       height={100} 
+						       src={ ExactScience } alt="user image" />
+		</section>	
 	</body>
 </html>

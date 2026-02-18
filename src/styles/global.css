@@ -183,19 +183,31 @@ hr {
 }
 
 .lines .line:nth-child(1) {
-  margin-left: -46%;
+  margin-left: -50%;
 }
 
 .lines .line:nth-child(1)::after {
   animation-delay: 2s;
 }
 
+.lines .line:nth-child(2) {
+  margin-left: -10%;
+}
+
 .lines .line:nth-child(3) {
   margin-left: 46%;
 }
 
+.lines .line:nth-child(2)::after {
+	animation-delay: 1s;
+}
+
+.lines .line:nth-child(4) {
+  margin-left: 14%;
+}
+
 .lines .line:nth-child(3)::after {
-  animation-delay: 2.6s;
+  animation-delay: 1.6s;
 }
 
 .lines .line::after {
@@ -212,7 +224,7 @@ hr {
     #efc58d 55%,
     #efc58d 100%
   );
-  animation: run 4s 0s infinite;
+  animation: run 3s 0s infinite;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(.2, 0.70, 0, 1);
 }

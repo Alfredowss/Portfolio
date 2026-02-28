@@ -50,11 +50,30 @@ body {
 	font-size: 20px;
 	line-height: 1.7;
 	height: 100vh;
-	background-image: linear-gradient( 140deg, #a1a1a1 0%, #e8e8e8 30%, #e8e8e8 50%, #e8e8e8 60%, #96a9ff 130%), url("/grid.jpg");
-    background-blend-mode: multiply;
-	background-size: cover;
-	background-position: top center;
 }
+
+.hero{
+  position: relative;
+  background: url("/grid.jpg") top center / cover no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    140deg,
+    #a1a1a1 0%,
+    #e8e8e8 30%,
+    #e8e8e8 50%,
+    #e8e8e8 60%,
+    #96a9ff 100%
+  );
+  mix-blend-mode: multiply; /* or adjust opacity */
+  pointer-events: none;
+}
+
+
 
 h1,
 h2,

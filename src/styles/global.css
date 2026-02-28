@@ -14,8 +14,8 @@
 
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
+	--accent: #0A66C2;
+	--accent-dark: #0A66C2;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -50,10 +50,12 @@ body {
 	font-size: 20px;
 	line-height: 1.7;
 	height: 100vh;
-	background-image: url("public/grid.jpg");
+	background-image: linear-gradient( 140deg, #a1a1a1 0%, #e8e8e8 30%, #e8e8e8 50%, #e8e8e8 60%, #96a9ff 130%), url("/grid.jpg");
+    background-blend-mode: multiply;
 	background-size: cover;
 	background-position: top center;
 }
+
 h1,
 h2,
 h3,
@@ -182,6 +184,18 @@ hr {
 	}
 }
 
+@media (max-width: 720px){
+	.lines{
+		top: 4em;
+	}
+	.line:nth-child(2){
+		display: none;
+	}
+	.line:nth-child(4){
+		display: none;
+	}
+}
+
 .lines .line:nth-child(1) {
   margin-left: -50%;
 }
@@ -221,10 +235,10 @@ hr {
   background: linear-gradient(
     to bottom,
     rgba(255, 217, 0, 0) 0%,
-    #efc58d 55%,
-    #efc58d 100%
+    #32323288 55%,
+    #32323288 100%
   );
-  animation: run 3s 0s infinite;
+  animation: run 5s 0s infinite;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(.2, 0.70, 0, 1);
 }
@@ -238,6 +252,42 @@ hr {
   }
 }
 
+/* Animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Styling */
+.slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider .slide-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+.slider .slide {
+  flex-shrink: 0;
+}
 
 
 

@@ -63,11 +63,11 @@ body {
   inset: 0;
   background: linear-gradient(
     140deg,
-    #a1a1a1 0%,
+    #F472B6 -32%,
     #e8e8e8 30%,
     #e8e8e8 50%,
     #e8e8e8 60%,
-    #96a9ff 100%
+    #96a9ff 88%
   );
   mix-blend-mode: multiply; /* or adjust opacity */
   pointer-events: none;
@@ -213,6 +213,10 @@ hr {
 	.line:nth-child(4){
 		display: none;
 	}
+	.hero{
+		background-position: left;
+	}
+
 }
 
 .lines .line:nth-child(1) {

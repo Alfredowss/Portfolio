@@ -16,7 +16,32 @@ import Inter from "../assets/inter.png";
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
+
 	<body class="hero">
+		<svg
+	xmlns="//www.w3.org/2000/svg"
+	version="1.1"
+	class="svg-filters"
+	style="display: none;"
+	>
+	<defs>
+		<filter id="marker-shape">
+		<feTurbulence
+			type="fractalNoise"
+			baseFrequency="0 0.15"
+			numOctaves="1"
+			result="warp"
+		/>
+		<feDisplacementMap
+			xChannelSelector="R"
+			yChannelSelector="G"
+			scale="30"
+			in="SourceGraphic"
+			in2="warp"
+		/>
+		</filter>
+	</defs>
+		</svg>
 		<main class="h-svh text-center md:text-left grid grid-rows-[auto_1fr]"> 
 			<Header />
 			<article class="py-[5svh] md:py-0 grid grid-rows-[1fr_2fr] grid-cols-1 md:grid-rows-1 md:grid-cols-[auto_auto] gap-x-10 justify-items-end content-stretch  md:px-16">  	
@@ -27,7 +52,7 @@ import Inter from "../assets/inter.png";
   				<div class="line"></div>
 			</div>
 				<section class="md:h-auto row-start-2 md:row-start-auto max-w-[800px] grid grid-rows-[1fr_1fr_1fr] md:grid-rows-[auto_auto_auto] content-center md:gap-y-5 relative z-2">
-					<h1 class="font-[500] flex items-center justify-around md:justify-start"><span>✌️  Hi, I am <span class="text-[#0A66C2]">Alfredo</span>, <br/> Creative Technologist </span></h1>
+					<h1 class="font-[500] flex items-center justify-around md:justify-start relative"><span class="leading-11 md:leading-none">Hi, I'm <span class="text-[#0A66C2]">Alfredo</span>, <br/> <span class="highlight text-white">Creative Technologist </span></span></h1>
 					<p class="flex items-center px-7 md:px-0 md:block m-0 text-base md:text-xl">Fullstack developer. I have experience working with multiple techologies and frameworks, a focused developer in continously growing and in permanent search of technical challenges </p>
 					<div class="flex items-center justify-center md:justify-start">
 						<button class="cursor-pointer bg-[#0A66C2] m-0 my-[4vh] text-gray-50 px-12 py-2 rounded-md"> Download CV </button>
@@ -42,7 +67,7 @@ import Inter from "../assets/inter.png";
 				</section>
 			</article>
 		</main>
-		<section class="bg-[#e8e8e8] h-[120px] md:h-[200px] relative z-3 ps-18 slider flex items-center">
+		<section class="bg-[#efefef55] h-[120px] md:h-[200px] relative z-3 ps-18 slider flex items-center">
 			<section class="flex items-center slide-track h-100">
 				<Image class="w-[98px] md:w-[160px] mx-8 slide"
 				    src={ AnacondaSw } alt="user image" />

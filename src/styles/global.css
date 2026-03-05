@@ -63,17 +63,38 @@ body {
   inset: 0;
   background: linear-gradient(
     140deg,
-    #F472B6 -32%,
+    #8ac1ff -38%,
     #e8e8e8 30%,
     #e8e8e8 50%,
     #e8e8e8 60%,
-    #96a9ff 88%
+    #9bcbff 86%
   );
   mix-blend-mode: multiply; /* or adjust opacity */
   pointer-events: none;
 }
 
-
+.highlight {
+  position: relative;
+  padding: 0em 0.4em;
+  background: transparent;
+  color: currentColor;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  z-index: 3;
+  color: rgb(238, 231, 231);
+}
+ 
+.highlight::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 105%;
+  left: -0.25rem;
+  top: -0.05rem;
+  filter: url(#marker-shape);
+  background-color: #7c50b2;
+  z-index: -1;
+}
 
 h1,
 h2,
@@ -190,11 +211,12 @@ hr {
 
 .lines .line {
   position: absolute;
-  width: 3px;
   height: 100%;
   top: 0;
-  left: 50%;
   background: rgba(255, 255, 255, 0.4);
+  width: 3px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media (min-width: 720px) {
@@ -210,9 +232,6 @@ hr {
 	.line:nth-child(2){
 		display: none;
 	}
-	.line:nth-child(4){
-		display: none;
-	}
 	.hero{
 		background-position: left;
 	}
@@ -220,7 +239,7 @@ hr {
 }
 
 .lines .line:nth-child(1) {
-  margin-left: -50%;
+  margin-left: -42vw;
 }
 
 .lines .line:nth-child(1)::after {
@@ -249,30 +268,25 @@ hr {
 
 .lines .line::after {
   content: "";
-  display: block;
   position: absolute;
   height: 40px;
   width: 100%;
-  top: -50%;
+  top: 0;
   left: 0;
+  transform: translateY(-200%);
   background: linear-gradient(
     to bottom,
     rgba(255, 217, 0, 0) 0%,
     #32323288 55%,
     #32323288 100%
   );
-  animation: run 5s 0s infinite;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(.2, 0.70, 0, 1);
+  animation: run 5s infinite cubic-bezier(.2, 0.70, 0, 1);
+  will-change: transform;
 }
 
 @keyframes run {
-  0% {
-    top: -50%;
-  }
-  100% {
-    top: 100%;
-  }
+  0%   { transform: translateY(-150%); }
+  100% { transform: translateY(150vh); }
 }
 
 /* Animation */

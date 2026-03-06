@@ -52,7 +52,27 @@ import Inter from "../assets/inter.png";
   				<div class="line"></div>
 			</div>
 				<section class="md:h-auto row-start-2 md:row-start-auto max-w-[800px] grid grid-rows-[1fr_1fr_1fr] md:grid-rows-[auto_auto_auto] content-center md:gap-y-5 relative z-2">
-					<h1 class="font-[500] flex items-center justify-around md:justify-start relative"><span class="leading-11 md:leading-none">Hi, I'm <span class="text-[#0A66C2]">Alfredo</span>, <br/> <span class="highlight text-white">Creative Technologist </span></span></h1>
+					<h1 class="font-[500] flex items-center justify-around md:justify-start relative">
+					<span class="leading-11 md:leading-none">
+						Hi, I'm <span class="text-[#0A66C2]">Alfredo</span>, <br/>
+						<span class="highlight text-white">Creative Engineer</span>
+					</span>
+					</h1>	
+					<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+						<filter id="marker-shape">
+							<feTurbulence 
+							type="fractalNoise"
+							baseFrequency="0 0.15"
+							numOctaves="1"
+							result="warp"
+							/>
+							<feDisplacementMap 
+							in="SourceGraphic"
+							in2="warp"
+							scale="6"
+							/>
+						</filter>
+						</svg>				
 					<p class="flex items-center px-7 md:px-0 md:block m-0 text-base md:text-xl">Fullstack developer. I have experience working with multiple techologies and frameworks, a focused developer in continously growing and in permanent search of technical challenges </p>
 					<div class="flex items-center justify-center md:justify-start">
 						<button class="cursor-pointer bg-[#0A66C2] m-0 my-[4vh] text-gray-50 px-12 py-2 rounded-md"> Download CV </button>
@@ -60,15 +80,15 @@ import Inter from "../assets/inter.png";
 				</section>	
 
 				<section class="row-start-1 row-end-2 md:row-start-auto md:row-end-auto relative justify-self-center md:justify-self-start content-center">
-					<figure class="rounded-full text-light relative z-2 md:top-[-1em] w-[54vw] h-[54vw] md:w-[360px] md:h-[360px] xl:w-[400px] xl:h-[400px]" style="overflow:hidden; display: flex; justify-content:center; align-items: center;">
+					<figure class="rounded-full text-light relative z-2 md:top-[-1em] w-[52vw] h-[52vw] md:w-[360px] md:h-[360px] xl:w-[400px] xl:h-[400px]" style="overflow:hidden; display: flex; justify-content:center; align-items: center;">
 						<Image class="w-[54vw] h-[54vw] xl:w-[400px] xl:h-[400px]"
 						       src={ myPhoto } alt="user image" />
 					</figure>
 				</section>
 			</article>
 		</main>
-		<section class="bg-[#efefef55] h-[120px] md:h-[200px] relative z-3 ps-18 slider flex items-center">
-			<section class="flex items-center slide-track h-100">
+		<section class="h-[100vh] relative z-3 slider hero-2">
+			<section class="flex items-center slide-track">
 				<Image class="w-[98px] md:w-[160px] mx-8 slide"
 				    src={ AnacondaSw } alt="user image" />
 				<Image class="w-[98px] md:w-[140px] mx-8 slide"
@@ -83,6 +103,10 @@ import Inter from "../assets/inter.png";
 				    src={ Inter } alt="user image" />
 				<Image class="w-[98px] md:w-[160px] slide mx-8"
 				    src={ AnacondaSw } alt="user image" />
+				<Image class="w-[166px] md:w-[260px] mx-6 slide"
+			        width={400} 
+				    height={100} 
+				    src={ ExactScience } alt="user image" />
 				<Image class="w-[98px] md:w-[140px] mx-8"
 				    width={400} 
 				    height={100} 

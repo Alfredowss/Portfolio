@@ -53,7 +53,7 @@ import Inter from "../assets/inter.png";
 			</div>
 				<section class="md:h-auto row-start-2 md:row-start-auto max-w-[800px] grid grid-rows-[1fr_1fr_1fr] md:grid-rows-[auto_auto_auto] content-center md:gap-y-5 relative z-2">
 					<h1 class="font-[500] flex items-center justify-around md:justify-start relative">
-					<span class="leading-11 md:leading-none">
+					<span class="leading-11 md:leading-none hero-brand">
 						Hi, I'm <span class="text-[#0A66C2]">Alfredo</span>, <br/>
 						<span class="highlight text-white">Creative Engineer</span>
 					</span>
@@ -72,18 +72,36 @@ import Inter from "../assets/inter.png";
 							scale="6"
 							/>
 						</filter>
-						</svg>				
+					</svg>				
 					<p class="flex items-center px-7 md:px-0 md:block m-0 text-base md:text-xl">Fullstack developer. I have experience working with multiple techologies and frameworks, a focused developer in continously growing and in permanent search of technical challenges </p>
-					<div class="flex items-center justify-center md:justify-start">
-						<button class="cursor-pointer bg-[#0A66C2] m-0 my-[4vh] text-gray-50 px-12 py-2 rounded-md"> Download CV </button>
+					<div class="draggable flex items-center justify-center md:justify-start">
+						<div class="w-[46%]">
+							<button id="sliderRail" class="cssbuttons-io-button text-center">
+								  Go to 🍀
+								<div class="icon">
+									<svg
+									height="24"
+									width="24"
+									viewBox="0 0 24 24"
+									xmlns="http://www.w3.org/2000/svg"
+									>
+									<path d="M0 0h24v24H0z" fill="none"></path>
+									<path
+										d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+										fill="currentColor"
+									></path>
+									</svg>
+								</div>
+							</button>
+						</div>
 					<div>	
 				</section>	
 
 				<section class="row-start-1 row-end-2 md:row-start-auto md:row-end-auto relative justify-self-center md:justify-self-start content-center">
 					<figure class="rounded-full text-light relative z-2 md:top-[-1em] w-[52vw] h-[52vw] md:w-[360px] md:h-[360px] xl:w-[400px] xl:h-[400px]" style="overflow:hidden; display: flex; justify-content:center; align-items: center;">
-						<Image class="w-[54vw] h-[54vw] xl:w-[400px] xl:h-[400px]"
+						<Image class="w-[52vw] h-[52vw] xl:w-[400px] xl:h-[400px] user-photo"
 						       src={ myPhoto } alt="user image" />
-					</figure>
+							</figure>
 				</section>
 			</article>
 		</main>
@@ -117,6 +135,13 @@ import Inter from "../assets/inter.png";
 				    src={ ExactScience } alt="user image" />
 				<Image class="w-[160px] md:w-[320px] mx-6 slide"
 				    src={ Inter } alt="user image" />
+			</section>
+			<section class="h-[100vh] hero-3">
+				<h5>My Projects</h5>
+				<div>One</div>
+				<div>Two</div>
+				<div>Three</div>
+				
 			</section>
 		</section>	
 	</body>

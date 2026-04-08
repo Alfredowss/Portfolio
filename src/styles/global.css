@@ -76,7 +76,21 @@ body {
 
 .hero.dark {
   position: relative;
-  background: url("/grid-dark-v2.jpg") top center / cover no-repeat;
+  background: 
+  url("/grid-dark-v3.png"), 
+  linear-gradient(
+    140deg,
+    #030c13 -38%,
+    #040d1a 30%,
+    #040d1a 50%,
+    #040d1a 60%,
+    #030c13 86%
+  );
+  
+  mix-blend-mode: daken; 
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
 }
 
 .hero.dark .hero-brand{
@@ -111,26 +125,9 @@ body {
     #e8e8e8 60%,
     #9bcbff 86%
   );
-  mix-blend-mode: multiply; /* or adjust opacity */
+  mix-blend-mode: multiply; 
   pointer-events: none;
 }
-
-.dark::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    140deg,
-    #030c13 -38%,
-    #040d1a 30%,
-    #040d1a 50%,
-    #040d1a 60%,
-    #030c13 86%
-  );
-  mix-blend-mode: multiply; /* or adjust opacity */
-  pointer-events: none;
-}
-
 
 
 .hero-2{

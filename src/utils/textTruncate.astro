@@ -1,0 +1,59 @@
+---
+interface Props {
+  text: string;
+  mobileLimit?: number;
+  desktopLimit?: number;
+}
+
+const {
+  text,
+  mobileLimit = 140,
+  desktopLimit = 280
+} = Astro.props;
+---
+
+<p
+  data-truncate
+  data-full={text}
+  data-mobile={mobileLimit}
+  data-desktop={desktopLimit}
+  class="post-item__body mt-1"
+  title={text}
+>
+  {text}
+</p>
+
+<script>
+  const elements = document.querySelectorAll("[data-truncate]");
+
+  const parseLimit = (value, fallback) => {
+    const n = Number(value);
+    return Number.isFinite(n) ? n : fallback;
+  };
+
+  const truncate = (str, max) =>
+    str.length > max ? str.slice(0, max) + "..." : str;
+
+  const mq = window.matchMedia("(max-width: 767px)");
+
+  function render() {
+    elements.forEach((el) => {
+      const full = el.dataset.full ?? "";
+      const mobile = parseLimit(el.dataset.mobile, 140);
+      const desktop = parseLimit(el.dataset.desktop, 280);
+
+      el.textContent = truncate(full, mq.matches ? mobile : desktop);
+    });
+  }
+
+  render();
+  mq.addEventListener("change", render);
+</script>
+
+<style>
+  @media (max-width: 1024px) {
+    .post-item__body {
+      font-size: 0.84em;
+    }
+  }
+</style>

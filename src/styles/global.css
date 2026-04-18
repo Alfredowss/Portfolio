@@ -28,8 +28,17 @@
 		rgba(var(--gray), 33%);
 	--background-dark-image: url("/grid-dark.jpg");	
 
+  /*font specs*/
   --text-body: var(--gray-dark);
   --navbar-links: var(--black);
+
+  --font-normal: 1rem;
+  --font-md: 1rem;
+
+}
+
+a {
+  color: inherit !important;
 }
 
 .dark {
@@ -81,9 +90,9 @@ body {
   linear-gradient(
     140deg,
     #030c13 -38%,
-    #040d1a 30%,
-    #040d1a 50%,
-    #040d1a 60%,
+    #030c17 30%,
+    #030c17 50%,
+    #030c17 60%,
     #030c13 86%
   );
   
@@ -590,6 +599,10 @@ label[data-dark-mode="true"] .switch {
 
 .user-photo{
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-image: url("/public/alfred.jpeg");
+  background-size: 230%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #sliderRail:after {
@@ -600,7 +613,7 @@ label[data-dark-mode="true"] .switch {
   width: 0%;
   height: 100%;
   border-radius: 10px;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.5);
   transition: none;
   animation: shine 1.3s infinite;
 }

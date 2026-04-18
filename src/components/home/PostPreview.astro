@@ -1,0 +1,73 @@
+---
+import TextTruncate from "../../utils/textTruncate.astro"
+---
+
+<section class="post h-[80vh] min-h-[700px] lg:h-[30vh] lg:min-h-[500px] py-12">
+    <h5 class="ps-[14vw]">Recent posts</h5>
+    <ul class="my-8 block flex flex-col lg:flex-row items-center justify-center">
+        <li class="post-item bg-gray-800 w-[80vw] h-[240px] lg:h-[300px] xl:h-[320px] lg:max-w-[500px] p-6 lg:p-8 cursor-pointer lg:me-8 mb-8 lg:mb-0 rounded-md overflow-hidden">
+            <a href="/blog/post/1" class="no-underline">
+                <header class="grow-2">
+                    <h5 class="post-item__title">Common approaches and concerns about scalable frontend arquitechtures</h5>
+                    <p class="post-item__date">12 Feb 2020   |   Design Pattern</p>
+                </header>
+                <section class="grow-1">
+                <TextTruncate
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit."
+                />
+                </section>
+            
+            </a>
+        </li>
+        <li class="post-item bg-gray-800 w-[80vw] h-[240px] lg:h-[300px] xl:h-[320px] w-[40vw] lg:max-w-[500px] p-6 lg:p-8 cursor-pointer rounded-md overflow-hidden">
+            <header class="grow-2">
+                <h5 class="post-item__title">Understanding reusable components (React, Vue, Angular)</h5>
+                <p class="post-item__date"> 12 Feb 2020   |   Design Pattern</p>
+            </header>
+            <section class="grow-1">
+                <TextTruncate 
+                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit."
+                />
+            </section>
+        </li>
+    </ul>
+</section>
+
+<style>
+    .post{
+        --base-font: var(--font-md);
+        font-size: var(--font-md);
+    }
+
+    .post-item{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .post-item__title{
+        font-size: 1.3em;
+        color: var(--accent-dark);
+    }
+
+    .post-item__date{
+        font-size: .86em;
+    }
+
+    .post-item__body{
+        font-size: .9em;
+    }
+
+    @media (max-width: 1024px) {
+        /* lg breakpoint*/
+        .post-item__title{
+            font-size: 1.04em;
+        }
+
+        .post-item__date{
+            font-size: .66em;
+        }
+        .post-item__body{
+            font-size: .84em;
+        }
+    }
+</style>

@@ -89,11 +89,11 @@ body {
   url("/grid-dark-v3.png"), 
   linear-gradient(
     140deg,
-    #030c13 -38%,
-    #030c17 30%,
+    #02090f -38%,
+    #020c13 30%,
     #030c17 50%,
     #030c17 60%,
-    #030c13 86%
+    #02090f 86%
   );
   
   mix-blend-mode: daken; 
@@ -107,7 +107,7 @@ body {
 }
 
 .hero.dark .line{
-  background: rgba(49, 49, 49, 0.171);
+  background: rgba(37, 37, 37, 0.1);
 }
 
 
@@ -313,7 +313,8 @@ hr {
 	}
 
 	.hero-brand{
-		line-height: 1.45em;
+		line-height: 1.44em;
+    text-align: center;
 	}
 }
 
@@ -397,6 +398,15 @@ hr {
   }
 }
 
+@keyframes scrollInverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
 /* Styling */
 .slider {
   overflow: hidden;
@@ -418,9 +428,21 @@ hr {
   display: flex;
   width: max-content;
   animation: scroll 25s linear infinite;
+  will-change: transform;
 }
 
 .slider .slide {
+  flex-shrink: 0;
+}
+
+.slider-2 .slide-track {
+  display: flex;
+  width: max-content;
+  animation: scrollInverse 25s linear infinite;
+  will-change: transform;
+}
+
+.slider-2 .slide {
   flex-shrink: 0;
 }
 
@@ -433,13 +455,13 @@ body *::after {
 }
 
 body .switch {
-  width: 56px;	
+  width: 50px;	
   border-radius: 9999px;
   padding: 5px;
   background-color: #409fe4;
   background-clip: padding-box;
   box-shadow: -1px 5px 4px inset rgba(0, 0, 0, 0.44);
-  height: 22px;
+  height: 20px;
   box-sizing: content-box;
   z-index: 1;
   border: 2px solid transparent;
@@ -479,8 +501,8 @@ body .switch::after {
 
 .sun-moon {
   font-size: 22px;
-  width: 1em;
-  height: 1em;
+  width: .9em;
+  height: .9em;
   position: absolute;
   border-radius: 50%;
   right: calc(100% - 5px - 1em);
@@ -576,7 +598,7 @@ label[data-dark-mode="true"] .switch {
   position: relative;
   height: 2.8em;
   cursor: pointer;
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -599,10 +621,10 @@ label[data-dark-mode="true"] .switch {
 
 .user-photo{
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  background-image: url("/public/alfred.jpeg");
-  background-size: 230%;
+  background-image: url("/public/alfredo.jpeg");
+  background-size: 180%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 45% 65%;
 }
 
 #sliderRail:after {

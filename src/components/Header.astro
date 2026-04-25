@@ -8,8 +8,8 @@ import HeaderLink from './HeaderLink.astro';
 		<h2 class="psycode"><a href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">Apps</HeaderLink>
+			<HeaderLink href="/blog" showDot>Blog</HeaderLink>
+			<HeaderLink href="/about" showDot>Apps</HeaderLink>
 		</div>
 		<div class="social-links">
 			<label for="dark-mode">
@@ -43,7 +43,7 @@ import HeaderLink from './HeaderLink.astro';
 <style>
 	header {
 		margin: 0;
-		padding: 0 1em;
+		padding: .1em 1em;
 		background: var(--light-transparency);
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 		left: 0;
@@ -66,7 +66,7 @@ import HeaderLink from './HeaderLink.astro';
 		justify-content: space-between;
 	}
 	nav a {
-		padding: 1em 0.5em;
+		padding: 1em 0.8em;
 		color: var(--navbar-links);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;

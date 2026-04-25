@@ -1,24 +1,88 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
 
-type Props = HTMLAttributes<'a'>;
+interface Props extends HTMLAttributes<'a'> {
+  count?: number;
+  showDot?: boolean;
+}
 
-const { href, class: className, ...props } = Astro.props;
+const {
+  href,
+  class: className,
+  count,
+  showDot,
+  ...props
+} = Astro.props;
+
 const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
 const subpath = pathname.match(/[^\/]+/g);
-const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
+const isActive =
+  href === pathname || href === '/' + (subpath?.[0] || '');
 ---
 
-<a href={href} class:list={[className, { active: isActive }]} {...props}>
-	<slot />
+<a
+  href={href}
+  data-count={count}
+  class:list={[
+    className,
+    {
+      active: isActive,
+      notification: count !== undefined || showDot
+    }
+  ]}
+  {...props}
+>
+  <slot />
 </a>
+
 <style>
-	a {
-		display: inline-block;
-		text-decoration: none;
-	}
-	a.active {
-		font-weight: bolder;
-		text-decoration: underline;
-	}
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  a.active {
+    font-weight: bolder;
+    text-decoration: underline;
+  }
+
+  /* Base notification */
+  a.notification {
+    position: relative;
+  }
+
+  /* Number badge (only when count exists and is not empty) */
+  a.notification[data-count]:not([data-count=""])::after {
+    content: attr(data-count);
+    position: absolute;
+    top: -6px;
+    right: -10px;
+
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+
+    background-color: tomato;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Dot version (only when no count is provided) */
+  a.notification:not([data-count])::after {
+    content: "";
+    position: absolute;
+    top: 1;
+    right: -1;
+
+    width: 8px;
+    height: 8px;
+    background-color: tomato;
+    border-radius: 50%;
+  }
 </style>

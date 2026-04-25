@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+
+
+interface Props {
+  urls: { src: ImageMetadata, size: string, margin:string}[];
+  title: string
+}
+
+const { urls, title } = Astro.props as Props;
+---
+<section class="xl:my-12">
+  <h6 class="relative text-center py-4">{title}</h6>
+  <section class="flex items-center slide-track py-6">
+    {urls.map((e) => (
+      <Image
+        class={`${e.size} ${e.margin} slide`}
+        src={e.src}
+        alt="user image"
+      />
+    ))}
+  </section>
+</section>
+
+<style is:global>
+  .slide-track{
+    max-height: 110px;
+    background-color: #B5D5F7;
+  }
+
+  .dark .slide-track {
+    background-color: gray;
+  }
+
+  @media (min-width: 1280px) {
+    .slide-track{
+      max-height: 160px;
+    }
+  }
+</style>

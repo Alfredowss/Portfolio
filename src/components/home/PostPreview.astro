@@ -33,7 +33,7 @@ import TextTruncate from "../../utils/textTruncate.astro"
     </ul>
 </section>
 
-<style>
+<style is:global>
     .post{
         --base-font: var(--font-md);
         font-size: var(--font-md);
@@ -45,16 +45,22 @@ import TextTruncate from "../../utils/textTruncate.astro"
     }
 
     .post-item__title{
+        color: var(--gray-lighter);
         font-size: 1.3em;
+    }
+
+    .dark .post-item__title{
         color: var(--accent-dark);
     }
 
+    
     .post-item__date{
         font-size: .86em;
     }
 
     .post-item__body{
         font-size: .9em;
+        color: var(--gray-light);
     }
 
     @media (max-width: 1024px) {

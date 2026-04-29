@@ -14,6 +14,6 @@ export default defineConfig({
 	vite: {
 		plugins: [ tailwindcss() ]
 	},
-	site: 'https://example.com',
+	site: 'https://Alfredowss.github.io',
 	integrations: [mdx(), sitemap()],
 });

@@ -1,0 +1,16 @@
+{
+  "projectId": "prj_bx9FqCIm9NRk6UdkP9BFEwGrtKSG",
+  "orgId": "team_9d6ohzLDhCmwTI12mP0gML7z",
+  "projectName": "portfolio",
+  "settings": {
+    "createdAt": 1777497450326,
+    "framework": "astro",
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": null,
+    "outputDirectory": null,
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "24.x"
+  }
+}

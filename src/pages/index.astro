@@ -1,7 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
-import { Image } from 'astro:assets';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import myPhoto from "../assets/alfred.png";
 import BoogApp from "../assets/BoogApp.png";
@@ -10,12 +9,13 @@ import AnacondaSw from "../assets/anaconda.png";
 import Inter from "../assets/inter.png";
 import PostPreview from "../components/home/PostPreview.astro"
 import Hero from "../components/home/Hero.astro"
-import MusicMenu from '../components/common/MusicMenu.astro';
+//import MusicMenu from '../components/common/MusicMenu.astro';
 import InfiniteSlider from '../components/common/InfiniteSlider.astro';
 import Angular from "../assets/angular.png";
 import Java from "../assets/java.png";
 import React from "../assets/react.png";
 import Node from "../assets/node.png";
+import Plant from "../assets/plant.png";
 
 const experienceUrls = [
 	{src: BoogApp, size: "w-[80px] xl:w-[140px]", margin: "mx-6"}, 
@@ -52,7 +52,7 @@ const stackUrls = [
 
 	<body class="hero dark">
 	
-		<MusicMenu />
+		<!-- <MusicMenu /> -->
 		
 		<Hero/>
 
@@ -102,7 +102,7 @@ const stackUrls = [
 		}
 </style>
 	<script>
-		import interact from 'interactjs';
+		/*import interact from 'interactjs';
 
 		let didDrag = false;
 		let isDragging = false;
@@ -198,6 +198,6 @@ const stackUrls = [
 
 		document.addEventListener('click', (e) => {
 		if (!pill.contains(e.target)) pill.classList.remove('open');
-		});
+		});*/
 	</script>
 </html>

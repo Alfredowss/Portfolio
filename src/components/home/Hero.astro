@@ -2,6 +2,7 @@
 import Header from '../../components/Header.astro';
 import { Image } from 'astro:assets';
 import verified from "../../assets/verified.svg";
+import Abstract from "../../assets/abstract.png";
 ---
 
 <main class="h-svh grid grid-rows-[auto_1fr]"> 
@@ -39,7 +40,7 @@ import verified from "../../assets/verified.svg";
 				</div>
 				<section class="md:h-auto h-full row-start-2 md:row-start-auto w-[98vw] md:w-auto max-w-[800px] grid grid-rows-[1fr_auto_1fr] md:grid-rows-[auto_auto_auto] content-center md:gap-y-5 relative z-2">
 					<h1 class="font-[500] flex items-center justify-around md:justify-start relative py-4 pt-6 md:py-0 text-center">
-						<span class="leading-11 md:leading-none hero-brand">
+						<span class="leading-11 md:leading-none hero-brand relative">
 							Hi, I'm <span class="text-[#0A66C2]">Alfredo<Image class="inline mx-3 pb-1 lg:mx-4" src={ verified }alt="verified bafge"/></span><br/>
 							<span class="highlight text-white">Software Engineer</span>
 						</span>
@@ -82,16 +83,51 @@ import verified from "../../assets/verified.svg";
 						</div>
 					<div>	
 				</section>	
-				<section class="row-start-1 row-end-2 md:row-start-auto md:row-end-auto relative justify-self-center md:justify-self-start content-center">
-					<figure class="rounded-full text-light relative z-2 md:top-[-1em] w-[54vw] h-[54vw] md:w-[360px] md:h-[360px] xl:w-[400px] xl:h-[400px]" style="overflow:hidden; display: flex; justify-content:center; align-items: center;">
-						<figure class="w-[54vw] h-[54vw] xl:w-[400px] xl:h-[400px] user-photo"/>
+				<section class="row-start-1 row-end-2 md:row-start-auto md:row-end-auto relative justify-self-center md:justify-self-start content-center relative">
+					<figure class="rounded-full text-light relative z-2 md:top-[-1em] w-[53vw] h-[53vw] md:w-[360px] md:h-[360px] xl:w-[400px] xl:h-[400px]" style="overflow:hidden; display: flex; justify-content:center; align-items: center;">
+						<figure class="w-[53vw] h-[53vw] xl:w-[400px] xl:h-[400px] user-photo" style="z-index:2"/>
+					</figure>
+					<figure class="abstract-background">
+
 					</figure>
 				</section>
 		</article>
 </main>
 
-<style>
+<style is:global>
 	.text-base{
 		font-size: .86em;
+	}
+	.abstract-background{
+ 		 background-image: url("/public/abstract.png");
+		 width: 82vw;
+		 height: 82vw;
+		 background-size: contain;
+		 background-repeat: no-repeat;
+		 position: absolute;
+		 top: -19%;
+		 left: -22%;
+	}
+	.dark .abstract-background{
+		 background-image: url("/public/abstract-light.png");
+		 width: 86vw;
+		 height: 86vw;
+		 background-size: contain;
+		 background-repeat: no-repeat;
+		 position: absolute;
+		 top: -34%;
+		 left: -20%;
+	}
+
+	@media (min-width: 1200px) {
+		.dark .abstract-background{
+		 width: 36vw !important;
+		 height: 36vw !important;
+		 background-size: contain;
+		 background-repeat: no-repeat;
+		 position: absolute;
+		 top: 6%;
+		 left: -22s%;
+	}
 	}
 </style>

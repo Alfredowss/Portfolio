@@ -35,7 +35,7 @@ const isActive =
   <slot />
 </a>
 
-<style>
+<style is:global>
   a {
     display: inline-block;
     text-decoration: none;
@@ -44,6 +44,7 @@ const isActive =
   a.active {
     font-weight: bolder;
     text-decoration: underline;
+    color: #0A66C2 !important;
   }
 
   /* Base notification */
